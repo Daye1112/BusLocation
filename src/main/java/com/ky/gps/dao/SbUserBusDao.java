@@ -13,10 +13,11 @@ public interface SbUserBusDao {
 
     /**
      * 根据用户id查询该用户能查看的所有路线id和name
+     *
      * @param userId 用户id
      * @return 返回map
      */
-    List<Map<String, Object>> findRouteIdAndRouteNameByUserId(@Param("userId")Integer userId);
+    List<Map<String, Object>> findRouteIdAndRouteNameByUserId(@Param("userId") Integer userId);
 
     /**
      * 根据用户id删除该用户和路线对应的记录
@@ -26,4 +27,27 @@ public interface SbUserBusDao {
      * @param updateBy 更新者的workId
      */
     void deleteUserBusByUserId(@Param("userId") Integer userId, @Param("updateBy") String updateBy);
+
+    /**
+     * 根据筛选条件查询用户路线信息
+     *
+     * @param params 查询条件
+     * @return 返回map
+     */
+    List<Map<String, Object>> list(Map<String, Object> params);
+
+    /**
+     * 根据用户id删除所有分配路线记录
+     *
+     * @param userId 用户id
+     */
+    void deleteByUserId(@Param("userId") Integer userId);
+
+    /**
+     * 根据用户id的分配路线记录
+     *
+     * @param userId   用户id
+     * @param routeIds 路线id集合
+     */
+    void insert(@Param("userId") Integer userId, @Param("routeIds") List<Integer> routeIds);
 }

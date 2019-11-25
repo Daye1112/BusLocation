@@ -32,5 +32,59 @@
           and sub.Valid = 1
           and sub.USER_ID = #{userId}
     </select>
+    <!--根据筛选条件查询用户路线信息-->
+    <select id="list" resultType="map">
+        select t4.id          id,
+               t4.workid      workId,
+               t5.NAME        departmentName,
+               t4.real_name   realName,
+               t4.id_card     idCard,
+               t4.phone       phone ,
+               t4.email       email,
+               t4.routenames  routenames
+        from b_department t5,
+             (select t.id,
+                     t.department_id,
+                     t.workid,
+                     t.real_name,
+                     t.id_card,
+                     t.phone,
+                     t.email,
+                     t3.routeNames
+              from sys_user t
+              left join
+                   (select t1.USER_ID,
+                           GROUP_CONCAT(t2.SBR_ROUTENAME SEPARATOR ',') AS routeNames
+                    from sb_user_bus t1,
+                         sb_route t2
+                    where t1.Valid = 1
+                      and t2.Valid = 1
+                      and t1.ROUTE_ID = t2.ID
+                    group by t1.USER_ID) t3 on t.id = t3.USER_ID
+              where t.Valid = 1) t4
+        where t5.Valid = 1
+          and t5.ID = t4.DEPARTMENT_ID
+        <if test="department != null and department != ''">
+            and t5.NAME like #{department}
+        </if>
+        <if test="workId != null and workId != ''">
+            and t4.WORKID like #{workId}
+        </if>
+        <if test="realName != null and realName != ''">
+            and t4.REAL_NAME like #{realName}
+        </if>
+    </select>
+    <!--根据用户id删除所有分配路线记录-->
+    <delete id="deleteByUserId">
+        DELETE FROM sb_user_bus WHERE USER_ID = #{userId}
+    </delete>
+    <!--根据用户id的分配路线记录-->
+    <insert id="insert">
+        insert into sb_user_bus(USER_ID, ROUTE_ID)
+        values
+        <foreach collection="routeIds" item="routeId" separator=",">
+            (#{userId}, #{routeId})
+        </foreach>
+    </insert>
 
 </mapper>

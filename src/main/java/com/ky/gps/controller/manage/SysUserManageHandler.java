@@ -280,7 +280,12 @@ public class SysUserManageHandler {
                 //设置更新者workId
                 sysUser.setUpdatedBy(((SysLog) request.getSession().getAttribute(SysLogUtil.SESSION_SYSLOG)).getWorkId());
                 //更新对象
-                resultWrapper = ResultWrapperUtil.setSuccessOf(sysUserService.updateUserBaseInfo(sysUser));
+                Map<String, Object> res = sysUserService.updateUserBaseInfo(sysUser);
+                if(res != null) {
+                    resultWrapper = ResultWrapperUtil.setSuccessOf(res);
+                } else{
+                    resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.UPDATE_ERROR, "邮箱已存在", response);
+                }
                 //日志记录
                 sysLogService.saveSysLog(SysLogUtil.setOperateInfo(request, "更新用户基本信息", "/admin/update/info", "更新用户(id):" + sysUser.getId()));
             }
@@ -358,6 +363,9 @@ public class SysUserManageHandler {
             } else {
                 //添加用户信息，并将返回的json对象赋值给resultWrapper
                 resultWrapper = sysUserService.saveUserBaseInfo(sysUser);
+                if(resultWrapper == null){
+                    resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.SAVE_ERROR, "邮箱已存在", response);
+                }
                 //记录到用户操作记录
                 sysLogService.saveSysLog(SysLogUtil.setOperateInfo(request, "添加用户", "/admin/info/add", "添加用户:" + sysUser.getWorkId()));
             }

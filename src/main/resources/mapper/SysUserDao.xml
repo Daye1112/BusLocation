@@ -175,7 +175,9 @@
     <select id="findIdByEmail" resultType="java.lang.Integer" parameterType="string">
         SELECT ID id
         FROM sys_user
-        where EMAIL = #{email}
+        where Valid = 1
+          AND EMAIL = #{email}
+        LIMIT 1
     </select>
     <select id="findBaseInfoByEmail" resultType="map" parameterType="string">
         select sys_user.ID         id,
