@@ -69,9 +69,12 @@ public class SbBusPositionServiceImpl implements SbBusPositionService {
             if (JudgeTimeUtil.isEffectiveDate(sbbrStartTime, sbbrEndTime)
                     && JudgeTimeUtil.getWeek().equals(sbbrWeek)) {
                 //设置定位的路线id
-                sbBusPosition.setRouteId(route.get("id").toString());
+                sbBusPosition.setRouteId((Integer) route.get("id"));
                 break;
             }
+        }
+        if(sbBusPosition.getRouteId() == null){
+            sbBusPosition.setRouteId(-1);
         }
         sbBusPositionDao.savePosition(sbBusPosition);
     }

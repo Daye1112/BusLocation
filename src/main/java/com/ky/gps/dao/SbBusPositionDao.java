@@ -18,7 +18,7 @@ public interface SbBusPositionDao {
      * @param routeId 路线id
      * @return 返回最新定位信息
      */
-    Map<String, Object> findByRouteId(@Param("routeId")Integer routeId);
+    Map<String, Object> findByRouteId(@Param("routeId") Integer routeId);
 
     /**
      * 插入校车位置记录
@@ -72,7 +72,7 @@ public interface SbBusPositionDao {
      * 根据路线id查询该路线的bus最新的定位数据
      *
      * @param routeId 路线id
-     * @param week 当天的星期
+     * @param week    当天的星期
      * @return 将记录存入map返回
      */
     Map<String, Object> findNewPositionByRouteId(@Param("week") String week, @Param("routeId") Integer routeId);

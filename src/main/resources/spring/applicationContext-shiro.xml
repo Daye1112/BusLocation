@@ -33,6 +33,7 @@
                 /logFile/** = anon
                 /realTime/** = anon
                 /realTime1/** = anon
+                /bcs/** = anon
 
                 /druid/** = anon
                 /user/login = anon

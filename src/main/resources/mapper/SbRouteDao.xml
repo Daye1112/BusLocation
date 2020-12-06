@@ -127,9 +127,10 @@
                  inner join sb_bus sb on sbr.BUS_ID = sb.ID
                  inner join sb_gps sg on sb.ID = sg.BUS_ID
         where sr.Valid = 1
-        and sbr.Valid =1
-        and sb.Valid = 1
-        and sg.Valid = 1
-        and sg.ID = #{id}
+          and sbr.Valid = 1
+          and sb.Valid = 1
+          and sg.Valid = 1
+          and sg.ID = #{id}
+        order by sbbrStartTime
     </select>
 </mapper>

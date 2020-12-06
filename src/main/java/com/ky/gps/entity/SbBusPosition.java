@@ -15,7 +15,7 @@ public class SbBusPosition extends AbstractEntity {
     /** 所属GPS */
     private SbGps sbGps;
     /** 路线id */
-    private String routeId;
+    private Integer routeId;
     /** 记录时间 */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Timestamp sbpRecodeTime;
@@ -34,7 +34,7 @@ public class SbBusPosition extends AbstractEntity {
 
     /** 有参构造方法-自身属性 */
     public SbBusPosition(Integer id, SbGps sbGps,
-                         String routeId, Timestamp sbpRecodeTime,
+                         Integer routeId, Timestamp sbpRecodeTime,
                          Double sbpLongitude, Double sbpLatitude,
                          Double sbpVelocity, Double sbpDirection) {
         this.id = id;
@@ -53,7 +53,7 @@ public class SbBusPosition extends AbstractEntity {
                          Timestamp createdDate, String createdBy,
                          Timestamp updatedDate, String updatedBy,
                          Boolean valid, Integer id, SbGps sbGps,
-                         String routeId, Timestamp sbpRecodeTime,
+                         Integer routeId, Timestamp sbpRecodeTime,
                          Double sbpLongitude, Double sbpLatitude,
                          Double sbpVelocity, Double sbpDirection) {
         super(remark, remark1, remark2, remark3, createdDate, createdBy, updatedDate, updatedBy, valid);
@@ -102,11 +102,11 @@ public class SbBusPosition extends AbstractEntity {
         this.sbGps = sbGps;
     }
 
-    public String getRouteId() {
+    public Integer getRouteId() {
         return routeId;
     }
 
-    public void setRouteId(String routeId) {
+    public void setRouteId(Integer routeId) {
         this.routeId = routeId;
     }
 
