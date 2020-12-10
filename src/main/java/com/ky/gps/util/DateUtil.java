@@ -6,14 +6,16 @@ import java.util.Date;
 
 /**
  * 日期工具类
+ *
  * @author Darren
  */
 public class DateUtil {
 
     /**
      * 比较两个小时字符串的大小，24小时制
+     *
      * @param startTime 开始时间
-     * @param endTime 结束时间
+     * @param endTime   结束时间
      * @return 返回true/false
      */
     public static boolean verifyHour(String startTime, String endTime) throws ParseException {

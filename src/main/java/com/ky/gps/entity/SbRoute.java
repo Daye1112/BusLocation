@@ -8,24 +8,40 @@ import java.sql.Timestamp;
  */
 public class SbRoute extends AbstractEntity {
 
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 路线名 */
+    /**
+     * 路线名
+     */
     private String sbrRouteName;
-    /** 始发站 */
+    /**
+     * 始发站
+     */
     private String sbrStartStation;
-    /** 终点站 */
+    /**
+     * 终点站
+     */
     private String sbrEndStation;
-    /** 终点站 */
+    /**
+     * 终点站
+     */
     private String sbrDepartTime;
-    /** 路线信息 */
+    /**
+     * 路线信息
+     */
     private String sbrDesc;
 
-    /** 无参方法 */
+    /**
+     * 无参方法
+     */
     public SbRoute() {
     }
 
-    /** 有参方法-自身属性 */
+    /**
+     * 有参方法-自身属性
+     */
     public SbRoute(Integer id, String sbrRouteName,
                    String sbrStartStation, String sbrEndStation,
                    String sbrDepartTime, String sbrDesc) {
@@ -37,7 +53,9 @@ public class SbRoute extends AbstractEntity {
         this.sbrDesc = sbrDesc;
     }
 
-    /** 有参方法-所有属性 */
+    /**
+     * 有参方法-所有属性
+     */
     public SbRoute(String remark, String remark1,
                    String remark2, String remark3,
                    Timestamp createdDate, String createdBy,
@@ -57,6 +75,7 @@ public class SbRoute extends AbstractEntity {
 
     /**
      * 重写toString
+     *
      * @return 属性名+属性值
      */
     @Override
@@ -71,7 +90,9 @@ public class SbRoute extends AbstractEntity {
                 '}';
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

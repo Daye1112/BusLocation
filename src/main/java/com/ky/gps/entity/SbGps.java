@@ -7,22 +7,36 @@ import java.sql.Timestamp;
  * GPS设备实体类
  */
 public class SbGps extends AbstractEntity {
-    /** 设备发送的GPS信号id */
+    /**
+     * 设备发送的GPS信号id
+     */
     private String id;
-    /** 对应的校车 */
+    /**
+     * 对应的校车
+     */
     private SbBus sbBus;
-    /** GPS编号 */
+    /**
+     * GPS编号
+     */
     private String sbgNumber;
-    /** 型号 */
+    /**
+     * 型号
+     */
     private String sbgType;
-    /** 厂家 */
+    /**
+     * 厂家
+     */
     private String sbgFactoryName;
 
-    /** 无参方法 */
+    /**
+     * 无参方法
+     */
     public SbGps() {
     }
 
-    /** 有参方法-自身属性 */
+    /**
+     * 有参方法-自身属性
+     */
     public SbGps(String id, SbBus sbBus,
                  String sbgNumber,
                  String sbgType, String sbgFactoryName) {
@@ -33,7 +47,9 @@ public class SbGps extends AbstractEntity {
         this.sbgFactoryName = sbgFactoryName;
     }
 
-    /** 有参方法-自身属性 */
+    /**
+     * 有参方法-自身属性
+     */
     public SbGps(String remark, String remark1,
                  String remark2, String remark3,
                  Timestamp createdDate, String createdBy,
@@ -53,12 +69,16 @@ public class SbGps extends AbstractEntity {
         this.sbgFactoryName = sbgFactoryName;
     }
 
-    /** 有参方法-自身id */
+    /**
+     * 有参方法-自身id
+     */
     public SbGps(String id) {
         this.id = id;
     }
 
-    /** 有参方法-所有属性 */
+    /**
+     * 有参方法-所有属性
+     */
     @Override
     public String toString() {
         return "SbGps{" +

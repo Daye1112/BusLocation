@@ -3,7 +3,8 @@ package com.ky.gps.service.impl;
 import com.ky.gps.dao.SbUserBusDao;
 import com.ky.gps.dao.SbUserRoleDao;
 import com.ky.gps.dao.SysUserDao;
-import com.ky.gps.entity.*;
+import com.ky.gps.entity.ResultWrapper;
+import com.ky.gps.entity.SysUser;
 import com.ky.gps.service.SysUserService;
 import com.ky.gps.util.MapUtil;
 import com.ky.gps.util.ResultWrapperUtil;
@@ -12,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

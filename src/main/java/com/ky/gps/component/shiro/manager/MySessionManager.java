@@ -1,8 +1,6 @@
 package com.ky.gps.component.shiro.manager;
 
-import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
 import org.apache.shiro.web.servlet.ShiroHttpServletRequest;
-import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
@@ -16,6 +14,7 @@ import java.io.Serializable;
 
 /**
  * 重写shiro默认会话管理器
+ *
  * @author Daye
  */
 public class MySessionManager extends DefaultWebSessionManager {
@@ -38,7 +37,7 @@ public class MySessionManager extends DefaultWebSessionManager {
         //如果请求头中有 Authorization 则其值为sessionId
         String sessionId = WebUtils.toHttp(request).getHeader(AUTHORIZATION);
         HttpServletRequest req = (HttpServletRequest) request;
-        if(req.getRequestURL().indexOf("/login") != -1) {
+        if (req.getRequestURL().indexOf("/login") != -1) {
             return super.getSessionId(request, response);
         } else if (!StringUtils.isEmpty(sessionId)) {
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE, REFERENCED_SESSION_ID_SOURCE);

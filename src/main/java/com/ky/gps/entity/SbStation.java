@@ -8,22 +8,36 @@ import java.sql.Timestamp;
  */
 public class SbStation extends AbstractEntity {
 
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 站点名 */
+    /**
+     * 站点名
+     */
     private String sbsStation;
-    /** 经度 */
+    /**
+     * 经度
+     */
     private Double sbsLongitude;
-    /** 纬度 */
+    /**
+     * 纬度
+     */
     private Double sbsLatitude;
-    /** 站点描述 */
+    /**
+     * 站点描述
+     */
     private String sbsDesc;
 
-    /** 无参方法 */
+    /**
+     * 无参方法
+     */
     public SbStation() {
     }
 
-    /** 有参方法-自身方法 */
+    /**
+     * 有参方法-自身方法
+     */
     public SbStation(Integer id, String sbsStation,
                      Double sbsLongitude, Double sbsLatitude,
                      String sbsDesc) {
@@ -34,7 +48,9 @@ public class SbStation extends AbstractEntity {
         this.sbsDesc = sbsDesc;
     }
 
-    /** 有参方法-所有属性 */
+    /**
+     * 有参方法-所有属性
+     */
     public SbStation(String remark, String remark1,
                      String remark2, String remark3,
                      Timestamp createdDate, String createdBy,
@@ -65,7 +81,9 @@ public class SbStation extends AbstractEntity {
                 "} " + super.toString();
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

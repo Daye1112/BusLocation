@@ -12,8 +12,8 @@ public class IntegerUtil {
      * @param num 待判断的数字
      * @return true-有效；false-无效
      */
-    public static boolean isValid(Integer num){
-        return (num != null &&  num > 0);
+    public static boolean isValid(Integer num) {
+        return (num != null && num > 0);
     }
 
     /**
@@ -22,7 +22,7 @@ public class IntegerUtil {
      * @param num 待判断的数字
      * @return true-无效；false-有效
      */
-    public static boolean isNotValid(Integer num){
-        return (num == null ||  num <= 0);
+    public static boolean isNotValid(Integer num) {
+        return (num == null || num <= 0);
     }
 }

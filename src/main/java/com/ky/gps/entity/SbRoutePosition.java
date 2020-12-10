@@ -4,30 +4,44 @@ import java.sql.Timestamp;
 
 /**
  * @author Daye
- *
+ * <p>
  * 路线行驶轨迹表实体类
  */
 public class SbRoutePosition extends AbstractEntity {
-    /** 主键 */
+    /**
+     * 主键
+     */
     private Integer id;
 
-    /** 与路线1-n关系 */
+    /**
+     * 与路线1-n关系
+     */
     private SbRoute sbRoute;
 
-    /** 排序序号 */
+    /**
+     * 排序序号
+     */
     private Double srpIndex;
 
-    /** 经度 */
+    /**
+     * 经度
+     */
     private Double srpLongitude;
 
-    /** 纬度 */
+    /**
+     * 纬度
+     */
     private Double srpLatitude;
 
-    /** 构造方法-无参 */
+    /**
+     * 构造方法-无参
+     */
     public SbRoutePosition() {
     }
 
-    /** 构造方法-自身参数 */
+    /**
+     * 构造方法-自身参数
+     */
     public SbRoutePosition(Integer id, SbRoute sbRoute,
                            Double srpIndex, Double srpLongitude,
                            Double srpLatitude) {
@@ -38,7 +52,9 @@ public class SbRoutePosition extends AbstractEntity {
         this.srpLatitude = srpLatitude;
     }
 
-    /** 构造方法-所有参数 */
+    /**
+     * 构造方法-所有参数
+     */
     public SbRoutePosition(String remark, String remark1,
                            String remark2, String remark3,
                            Timestamp createdDate, String createdBy,

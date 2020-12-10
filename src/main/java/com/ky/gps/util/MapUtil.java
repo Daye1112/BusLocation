@@ -15,12 +15,13 @@ public class MapUtil {
 
     /**
      * 从map中提取userId到外层
+     *
      * @param userList 用户信息list
      * @return 返回提取后的list
      */
-    public static List<Map<String, Object>> extractUserIdFromMap(List<Map<String, Object>> userList){
+    public static List<Map<String, Object>> extractUserIdFromMap(List<Map<String, Object>> userList) {
         //判断是否为空
-        if(userList == null){
+        if (userList == null) {
             return null;
         }
         //创建待返回的list
@@ -43,11 +44,12 @@ public class MapUtil {
 
     /**
      * 将页的总记录数和总页数封装进map中，再讲map封装进json对象中返回
+     *
      * @param totalRecoding 总记录数
-     * @param totalPages 总页数
+     * @param totalPages    总页数
      * @return 返回json对象
      */
-    public static ResultWrapper setTotalInfoIntoMap(int totalRecoding, int totalPages){
+    public static ResultWrapper setTotalInfoIntoMap(int totalRecoding, int totalPages) {
         //创建map
         Map<String, Object> map = new HashMap<>();
         //将总记录数和总页数存入map中

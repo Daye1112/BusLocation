@@ -20,7 +20,8 @@
         <result column="valid" jdbcType="TINYINT" property="valid"/>
     </resultMap>
     <sql id="selectAllParams">
-        id id,
+        id
+        id,
         sbb_seat_num sbbSeatNum,
         sbb_bus_type sbbBusType,
         sbb_plate_number sbbPlateNumber,
@@ -29,7 +30,8 @@
         remark
     </sql>
     <sql id="allParams">
-            sbb_seat_num,
+        sbb_seat_num
+        ,
             sbb_bus_type,
             sbb_plate_number,
             sbb_driver_name,
@@ -110,7 +112,7 @@
     </select>
     <!--查询所有校车类型-->
     <select id="findType" resultType="java.lang.String">
-        SELECT DISTINCT  SBB_BUS_TYPE
+        SELECT DISTINCT SBB_BUS_TYPE
         from sb_bus
         WHERE Valid = 1
     </select>

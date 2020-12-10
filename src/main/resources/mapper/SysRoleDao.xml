@@ -81,13 +81,13 @@
           and ID = #{id}
     </select>
     <select id="findByCreatedDate" resultType="java.util.Map">
-        SELECT ID           id,
-               SR_NAME      srName,
-               SR_SOURCE    srSource,
-               SR_MANAGE    srManage,
-               SR_LEVEL     srLevel,
-               REMARK       remark,
-               CREATED_DATE createdDate
+        SELECT ID id,
+        SR_NAME srName,
+        SR_SOURCE srSource,
+        SR_MANAGE srManage,
+        SR_LEVEL srLevel,
+        REMARK remark,
+        CREATED_DATE createdDate
         FROM sys_role
         WHERE Valid = 1
         <if test="endDate != null and startDate != null">
@@ -97,7 +97,7 @@
     </select>
     <!--查询所有角色的id和name-->
     <select id="findIdAndSrName" resultType="map">
-        select ID id,
+        select ID      id,
                SR_NAME srName
         from sys_role
         where Valid = 1

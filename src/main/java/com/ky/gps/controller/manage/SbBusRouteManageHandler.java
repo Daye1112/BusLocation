@@ -41,7 +41,7 @@ public class SbBusRouteManageHandler {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResultWrapper update(@RequestBody(required = false) Map<String, Object> params,
                                 HttpServletResponse response,
-                                HttpServletRequest request){
+                                HttpServletRequest request) {
         ResultWrapper resultWrapper;
         //参数空值校验
         if (!params.isEmpty()

@@ -21,7 +21,8 @@
     </resultMap>
 
     <sql id="selectBaseParams">
-        id,
+        id
+        ,
         sbr_routename
         sbrRouteName,
         sbr_start_station
@@ -34,7 +35,8 @@
         sbrDesc
     </sql>
     <sql id="updateParams">
-            sbr_routename,
+        sbr_routename
+        ,
             sbr_start_station,
             sbr_end_station,
             sbr_depart_time,

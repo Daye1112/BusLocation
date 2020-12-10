@@ -10,29 +10,49 @@ import java.sql.Timestamp;
  */
 public class SbBusPosition extends AbstractEntity {
 
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 所属GPS */
+    /**
+     * 所属GPS
+     */
     private SbGps sbGps;
-    /** 路线id */
+    /**
+     * 路线id
+     */
     private Integer routeId;
-    /** 记录时间 */
+    /**
+     * 记录时间
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Timestamp sbpRecodeTime;
-    /** 实时经度 */
+    /**
+     * 实时经度
+     */
     private Double sbpLongitude;
-    /** 实时纬度 */
+    /**
+     * 实时纬度
+     */
     private Double sbpLatitude;
-    /** 速度 */
+    /**
+     * 速度
+     */
     private Double sbpVelocity;
-    /** 方向角 */
+    /**
+     * 方向角
+     */
     private Double sbpDirection;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SbBusPosition() {
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SbBusPosition(Integer id, SbGps sbGps,
                          Integer routeId, Timestamp sbpRecodeTime,
                          Double sbpLongitude, Double sbpLatitude,
@@ -47,7 +67,9 @@ public class SbBusPosition extends AbstractEntity {
         this.sbpDirection = sbpDirection;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SbBusPosition(String remark, String remark1,
                          String remark2, String remark3,
                          Timestamp createdDate, String createdBy,
@@ -69,6 +91,7 @@ public class SbBusPosition extends AbstractEntity {
 
     /**
      * 重写toString
+     *
      * @return 对象属性名+属性值
      */
     @Override
@@ -85,7 +108,9 @@ public class SbBusPosition extends AbstractEntity {
                 "} " + super.toString();
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

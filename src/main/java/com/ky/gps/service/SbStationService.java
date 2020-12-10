@@ -14,6 +14,7 @@ public interface SbStationService {
 
     /**
      * 查询所有站点名
+     *
      * @return 返回站点名集合
      */
     List<String> findNames();

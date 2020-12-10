@@ -2,14 +2,21 @@ package com.ky.gps.entity;
 
 /**
  * 用户将权限转换为Json对象
+ *
  * @author Daye
  */
-public class SysAuthorityExtractAttribute{
-    /** 权限id */
+public class SysAuthorityExtractAttribute {
+    /**
+     * 权限id
+     */
     private Integer id;
-    /** 权限名 */
+    /**
+     * 权限名
+     */
     private String saDisplayName;
-    /** 是否选中 */
+    /**
+     * 是否选中
+     */
     private Boolean checked;
 
     public SysAuthorityExtractAttribute() {

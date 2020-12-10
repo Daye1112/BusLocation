@@ -1,7 +1,6 @@
 package com.ky.gps.service;
 
 import com.ky.gps.entity.SysLog;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;

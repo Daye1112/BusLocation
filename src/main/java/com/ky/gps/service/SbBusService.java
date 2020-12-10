@@ -1,7 +1,6 @@
 package com.ky.gps.service;
 
 import com.ky.gps.entity.SbBus;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +14,7 @@ public interface SbBusService {
 
     /**
      * 查询所有校车类型
+     *
      * @return 返回校车类型list
      */
     List<String> findType();

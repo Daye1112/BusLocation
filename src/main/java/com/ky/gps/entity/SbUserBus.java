@@ -4,35 +4,49 @@ import java.sql.Timestamp;
 
 /**
  * @author Daye
- *
+ * <p>
  * 用户与校车的多对多表的实体类
  */
 public class SbUserBus extends AbstractEntity {
 
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 用户对象 */
+    /**
+     * 用户对象
+     */
     private SysUser sysUser;
-    /** 路线对象 */
+    /**
+     * 路线对象
+     */
     private SbRoute sbRoute;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SbUserBus() {
     }
 
-    /** 有参构造方法-id */
+    /**
+     * 有参构造方法-id
+     */
     public SbUserBus(Integer id) {
         this.id = id;
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SbUserBus(Integer id, SysUser sysUser, SbRoute sbRoute) {
         this.id = id;
         this.sysUser = sysUser;
         this.sbRoute = sbRoute;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SbUserBus(String remark, String remark1,
                      String remark2, String remark3,
                      Timestamp createdDate, String createdBy,
@@ -59,7 +73,9 @@ public class SbUserBus extends AbstractEntity {
                 '}';
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

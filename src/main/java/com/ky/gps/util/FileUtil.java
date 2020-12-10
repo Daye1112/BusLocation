@@ -6,11 +6,12 @@ import java.util.List;
 
 /**
  * 文件处理工具类
+ *
  * @author Daye
  */
 public class FileUtil {
 
-    public static List<String> getFileNames(List<File> fileList, String realPath){
+    public static List<String> getFileNames(List<File> fileList, String realPath) {
         List<String> fileNames = new ArrayList<>();
         for (File file : fileList) {
             String fileName = file.toString().substring(realPath.length());
@@ -21,16 +22,17 @@ public class FileUtil {
 
     /**
      * 获取文件夹下的所有文件
+     *
      * @param filePath 指定文件夹目录
      * @return 返回文件list
      */
-    public static List<File> readFiles(String filePath){
+    public static List<File> readFiles(String filePath) {
         List<File> fileList = new ArrayList<>();
 
         File file = new File(filePath);
-        if(!file.isDirectory()){
+        if (!file.isDirectory()) {
             fileList.add(file);
-        } else{
+        } else {
             String[] fileNameList = file.list();
             for (int i = 0; i < fileNameList.length; i++) {
                 File readFile = new File(filePath + "\\" + fileNameList[i]);

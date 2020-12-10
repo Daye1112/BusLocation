@@ -41,10 +41,11 @@ public class SysRoleManageHandler {
 
     /**
      * 根据时间筛选角色信息
-     * @param params 参数map，包含
-     *               startDate 开始时间
-     *               endDate 结束时间
-     * @param request 请求域
+     *
+     * @param params   参数map，包含
+     *                 startDate 开始时间
+     *                 endDate 结束时间
+     * @param request  请求域
      * @param response 响应域
      * @return 返回json格式数据
      */
@@ -53,21 +54,21 @@ public class SysRoleManageHandler {
     @ResponseBody
     @RequestMapping(value = "/f/query/date", method = RequestMethod.POST)
     public ResultWrapper findByCreatedDate(@RequestBody(required = false) Map<String, Object> params,
-                                                 HttpServletRequest request,
-                                                 HttpServletResponse response) {
+                                           HttpServletRequest request,
+                                           HttpServletResponse response) {
         ResultWrapper resultWrapper;
         try {
             //判断参数是否为空
-            if(params == null || params.size() <= 1){
+            if (params == null || params.size() <= 1) {
                 resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.EMPTY_ERROR, response);
-            }else {
+            } else {
                 //获取参数中的时间
                 String startDateStr = params.containsKey("startDate") && params.get("startDate") != null ? params.get("startDate").toString() : null;
                 String endDateStr = params.containsKey("endDate") && params.get("endDate") != null ? params.get("endDate").toString() : null;
                 //判断参数是否为null
-                if(StringUtil.isEmpty(startDateStr) || StringUtil.isEmpty(endDateStr)){
+                if (StringUtil.isEmpty(startDateStr) || StringUtil.isEmpty(endDateStr)) {
                     resultWrapper = sysRoleService.findByCreatedDate(null, null);
-                }else {
+                } else {
                     //日期格式化
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     Date startDate = simpleDateFormat.parse(startDateStr);

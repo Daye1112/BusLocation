@@ -4,7 +4,6 @@ import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.entity.SysAuthority;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 权限service层-接口类
@@ -15,12 +14,14 @@ public interface SysAuthorityService {
 
     /**
      * 查询所有权限记录
+     *
      * @return 返回json对象
      */
     ResultWrapper findAll();
 
     /**
      * 查询所有权限码
+     *
      * @return 返回字符list
      */
     List<String> findAllSaName();

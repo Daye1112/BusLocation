@@ -39,11 +39,11 @@ public class SysUserRouteManagerHandler {
     @PermissionName(displayName = "用户路线更新", group = "用户路线管理")
     @RequiresPermissions("userRoute:update")
     @PostMapping("/update")
-    public ResultWrapper update(@RequestBody Update update, HttpServletResponse response){
+    public ResultWrapper update(@RequestBody Update update, HttpServletResponse response) {
         ResultWrapper resultWrapper;
-        if(update == null || update.getRouteIds() == null || update.getUserId() == null){
+        if (update == null || update.getRouteIds() == null || update.getUserId() == null) {
             resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.EMPTY_ERROR, response);
-        } else{
+        } else {
             sbUserBusService.update(update.getUserId(), update.getRouteIds());
             resultWrapper = ResultWrapperUtil.setSuccessOf(null);
         }
@@ -53,10 +53,10 @@ public class SysUserRouteManagerHandler {
     @PermissionName(displayName = "用户路线查询", group = "用户路线管理")
     @RequiresPermissions("userRoute:query")
     @GetMapping("/list")
-    public ResultWrapper list( QueryCriteria queryCriteria){
+    public ResultWrapper list(QueryCriteria queryCriteria) {
         System.out.println(queryCriteria);
         Map<String, Object> params = new HashMap<>(16);
-        if(queryCriteria != null) {
+        if (queryCriteria != null) {
             params.put("department", queryCriteria.getDepartment());
             params.put("workId", queryCriteria.getWorkId());
             params.put("realName", queryCriteria.getRealName());
@@ -73,31 +73,31 @@ class Update {
 }
 
 @Data
-class QueryCriteria{
+class QueryCriteria {
     private String department;
     private String workId;
     private String realName;
 
     public void setDepartment(String department) {
-        if(StringUtils.isEmpty(department)){
+        if (StringUtils.isEmpty(department)) {
             this.department = department;
-        } else{
+        } else {
             this.department = "%" + department + "%";
         }
     }
 
     public void setWorkId(String workId) {
-        if(StringUtils.isEmpty(workId)){
+        if (StringUtils.isEmpty(workId)) {
             this.workId = workId;
-        } else{
+        } else {
             this.workId = "%" + workId + "%";
         }
     }
 
     public void setRealName(String realName) {
-        if(StringUtils.isEmpty(realName)){
+        if (StringUtils.isEmpty(realName)) {
             this.realName = realName;
-        } else{
+        } else {
             this.realName = "%" + realName + "%";
         }
     }

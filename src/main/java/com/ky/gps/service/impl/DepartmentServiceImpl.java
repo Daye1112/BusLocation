@@ -4,7 +4,6 @@ import com.ky.gps.dao.DepartmentDao;
 import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.service.DepartmentService;
 import com.ky.gps.util.ResultWrapperUtil;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Resource
     private DepartmentDao departmentDao;
 
-    @Transactional(rollbackFor = Exception.class,readOnly = true)
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
     @Override
     public ResultWrapper findAllNameAndId() {
         List<Map<String, Object>> deptList = departmentDao.findAllNameAndId();

@@ -73,7 +73,7 @@ public class SbBusPositionServiceImpl implements SbBusPositionService {
                 break;
             }
         }
-        if(sbBusPosition.getRouteId() == null){
+        if (sbBusPosition.getRouteId() == null) {
             sbBusPosition.setRouteId(-1);
         }
         sbBusPositionDao.savePosition(sbBusPosition);

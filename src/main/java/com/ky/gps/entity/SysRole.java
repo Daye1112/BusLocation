@@ -4,31 +4,47 @@ import java.sql.Timestamp;
 
 /**
  * @author Daye
- *
+ * <p>
  * 系统角色表实体类
  */
 public class SysRole extends AbstractEntity {
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 角色名 */
+    /**
+     * 角色名
+     */
     private String srName;
-    /** 角色代码 */
+    /**
+     * 角色代码
+     */
     private String srSource;
-    /** 是否有管理权限 0-否;1-是 */
+    /**
+     * 是否有管理权限 0-否;1-是
+     */
     private Boolean srManage;
-    /** 角色等级 0-管理员;1-经销商;2-个人 */
+    /**
+     * 角色等级 0-管理员;1-经销商;2-个人
+     */
     private Integer srLevel;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SysRole() {
     }
 
-    /** 有参构造方法-id */
+    /**
+     * 有参构造方法-id
+     */
     public SysRole(Integer id) {
         this.id = id;
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SysRole(Integer id, String srName,
                    String srSource, Boolean srManage, Integer srLevel) {
         this.id = id;
@@ -38,7 +54,9 @@ public class SysRole extends AbstractEntity {
         this.srLevel = srLevel;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SysRole(String remark, String remark1,
                    String remark2, String remark3,
                    Timestamp createdDate, String createdBy,
@@ -60,6 +78,7 @@ public class SysRole extends AbstractEntity {
 
     /**
      * 重写toString
+     *
      * @return 属性键值对
      */
     @Override
@@ -73,7 +92,9 @@ public class SysRole extends AbstractEntity {
                 "} " + super.toString();
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public String getSrName() {
         return srName;
     }

@@ -16,7 +16,8 @@
         <result column="Valid" jdbcType="BOOLEAN" property="valid"/>
     </resultMap>
     <sql id="Base_Column_List">
-            ID,
+        ID
+        ,
             ROLE_ID,
             AUTHORITY_ID,
             REMARK,

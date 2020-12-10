@@ -21,6 +21,6 @@
     <select id="findIdByBusId" resultType="string" parameterType="integer">
         select ID
         from sb_gps
-        where BUS_ID=#{busId}
+        where BUS_ID = #{busId}
     </select>
 </mapper>

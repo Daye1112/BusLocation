@@ -7,7 +7,6 @@ import com.ky.gps.service.SbRouteService;
 import com.ky.gps.util.JudgeTimeUtil;
 import com.ky.gps.util.ResultWrapperUtil;
 import com.ky.gps.util.StringUtil;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

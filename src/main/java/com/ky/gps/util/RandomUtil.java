@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * 随机数处理工具类
+ *
  * @author Daye
  */
 public class RandomUtil {
@@ -20,7 +21,7 @@ public class RandomUtil {
         Random r = new Random();
         StringBuffer res = new StringBuffer();
 
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             res.append(RANDOM_STR_NUMBER.charAt(r.nextInt(RANDOM_STR_NUMBER.length())));
         }
         return res.toString();
@@ -35,7 +36,7 @@ public class RandomUtil {
         Random r = new Random();
         StringBuffer res = new StringBuffer();
 
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             res.append(RANDOM_STR_LETTER_NUMBER.charAt(r.nextInt(RANDOM_STR_LETTER_NUMBER.length())));
         }
         return res.toString();

@@ -14,17 +14,17 @@ import javax.annotation.Resource;
 @Component
 public class SbBusPositionServiceUtil {
 
+    private static SbBusPositionServiceUtil sbBusPositionServiceUtil;
     @Resource
     private SbBusPositionService sbBusPositionService;
-    private static SbBusPositionServiceUtil sbBusPositionServiceUtil;
+
+    public static void savePosition(SbBusPosition sbBusPosition) {
+        sbBusPositionServiceUtil.sbBusPositionService.savePosition(sbBusPosition);
+    }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         sbBusPositionServiceUtil = this;
         sbBusPositionServiceUtil.sbBusPositionService = this.sbBusPositionService;
-    }
-    
-    public static void savePosition(SbBusPosition sbBusPosition){
-        sbBusPositionServiceUtil.sbBusPositionService.savePosition(sbBusPosition);
     }
 }

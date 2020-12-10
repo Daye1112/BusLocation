@@ -14,11 +14,15 @@ public class Department extends AbstractEntity {
     private Integer parentId;
     private Byte leaf;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public Department() {
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public Department(Integer id, String departmentName,
                       String code, String upLevel,
                       Integer parentId, Byte leaf) {
@@ -30,7 +34,9 @@ public class Department extends AbstractEntity {
         this.leaf = leaf;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public Department(String remark, String remark1,
                       String remark2, String remark3,
                       Timestamp createdDate, String createdBy,
@@ -54,6 +60,7 @@ public class Department extends AbstractEntity {
 
     /**
      * 重写toString方法
+     *
      * @return 返回属性值
      */
     @Override
@@ -69,7 +76,9 @@ public class Department extends AbstractEntity {
                 super.toString();
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

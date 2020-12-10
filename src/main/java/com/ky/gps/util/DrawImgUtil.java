@@ -14,35 +14,31 @@ import java.util.Random;
  */
 public class DrawImgUtil {
 
+    /**
+     * 随机串长度
+     */
+    private final static int CODE_LENGTH = 5;
+    /**
+     * 干扰线数量
+     */
+    private final static int LINE_SIZE = 10;
+    /**
+     * 图片宽
+     */
+    private final static int WIDTH = 70;
+    /**
+     * 图片高
+     */
+    private final static int HEIGHT = 25;
     private static DrawImgUtil drawImgUtil = null;
 
     private DrawImgUtil() {
     }
 
-    /**
-     * 随机串长度
-     */
-    private final static int CODE_LENGTH = 5;
-
-    /**
-     * 干扰线数量
-     */
-    private final static int LINE_SIZE = 10;
-
-    /**
-     * 图片宽
-     */
-    private final static int WIDTH = 70;
-
-    /**
-     * 图片高
-     */
-    private final static int HEIGHT = 25;
-
-    public static DrawImgUtil getInstance(){
-        if(drawImgUtil == null){
-            synchronized (DrawImgUtil.class){
-                if(drawImgUtil == null){
+    public static DrawImgUtil getInstance() {
+        if (drawImgUtil == null) {
+            synchronized (DrawImgUtil.class) {
+                if (drawImgUtil == null) {
                     drawImgUtil = new DrawImgUtil();
                 }
             }
@@ -89,12 +85,13 @@ public class DrawImgUtil {
 
     /**
      * 绘制干扰线
+     *
      * @param g
      */
-    private void drawLine(Graphics2D g){
+    private void drawLine(Graphics2D g) {
         Random random = new Random();
         //绘制干扰线
-        for(int i = 0; i < LINE_SIZE; i++) {
+        for (int i = 0; i < LINE_SIZE; i++) {
             int x = random.nextInt(WIDTH);
             int y = random.nextInt(HEIGHT);
             int xl = random.nextInt(13);

@@ -58,8 +58,7 @@
                 AND sys_user.WORKID = #{workId}
                 AND sys_user.`PASSWORD` = #{password}) admin_info
         WHERE b_department.Valid = 1
-          AND b_department.ID = admin_info.DEPARTMENT_ID
-        LIMIT 1
+          AND b_department.ID = admin_info.DEPARTMENT_ID LIMIT 1
     </select>
     <select id="findAllUser" resultType="java.util.Map">
         SELECT sys_user.ID         id,
@@ -89,7 +88,7 @@
           AND b_department.Valid = 1
           AND sys_user.DEPARTMENT_ID = b_department.ID
         ORDER BY sys_user.ID
-        LIMIT #{param1}, #{param2}
+            LIMIT #{param1}, #{param2}
     </select>
     <insert id="saveUserBaseInfo" parameterType="SysUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into sys_user(department_id, workid, real_name, password, salt, ID_CARD, phone, email, account_date,
@@ -176,8 +175,7 @@
         SELECT ID id
         FROM sys_user
         where Valid = 1
-          AND EMAIL = #{email}
-        LIMIT 1
+          AND EMAIL = #{email} LIMIT 1
     </select>
     <select id="findBaseInfoByEmail" resultType="map" parameterType="string">
         select sys_user.ID         id,
@@ -214,7 +212,7 @@
           AND b_department.Valid = 1
           AND sys_user.WORKID LIKE #{wordId}
         ORDER BY sys_user.ID
-        LIMIT #{startIndex} , #{pageSize}
+            LIMIT #{startIndex}, #{pageSize}
     </select>
     <!--根据realName进行模糊查询，并进行分页-->
     <select id="findUserByRealNameFuzzyPages" resultType="map">
@@ -231,7 +229,7 @@
           AND b_department.Valid = 1
           AND sys_user.REAL_NAME LIKE #{realName}
         ORDER BY sys_user.ID
-        LIMIT #{startIndex} , #{pageSize}
+            LIMIT #{startIndex}, #{pageSize}
     </select>
     <!--根据depId进行查询，并进行分页-->
     <select id="findUserByDepartmentId" resultType="map">
@@ -248,7 +246,7 @@
           AND b_department.Valid = 1
           AND sys_user.DEPARTMENT_ID = #{depId}
         ORDER BY sys_user.ID
-        LIMIT #{startIndex} , #{pageSize}
+            LIMIT #{startIndex}, #{pageSize}
     </select>
     <!-- 查询用户的总记录数 -->
     <select id="findTotalRecoding" resultType="int">
@@ -326,8 +324,7 @@
                 AND sys_role.SR_MANAGE = 1
                 AND sys_user.WORKID = #{workId}) admin_info
         WHERE b_department.Valid = 1
-          AND b_department.ID = admin_info.DEPARTMENT_ID
-        LIMIT 1
+          AND b_department.ID = admin_info.DEPARTMENT_ID LIMIT 1
     </select>
     <select id="findBaseInfoByWorkId" resultType="java.util.Map" parameterType="string">
         select sys_user.ID         id,

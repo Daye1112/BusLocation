@@ -10,7 +10,6 @@ import com.ky.gps.util.ResultWrapperUtil;
 import com.ky.gps.util.SbUserRoleUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,13 +53,13 @@ public class SbUserRoleManageHandler {
                                          HttpServletRequest request,
                                          HttpServletResponse response) {
         ResultWrapper resultWrapper;
-        if (params == null){
+        if (params == null) {
             resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.EMPTY_ERROR, response);
-        }else{
-            if(params.containsKey("workId")){
+        } else {
+            if (params.containsKey("workId")) {
                 params.put("workId", "%" + params.get("workId") + "%");
             }
-            if(params.containsKey("realName")){
+            if (params.containsKey("realName")) {
                 params.put("realName", "%" + params.get("realName") + "%");
             }
             resultWrapper = sbUserRoleService.fuzzyQueryByWorkIdAndRealNameAndDepartmentId(params);

@@ -13,7 +13,7 @@ public interface SbBusPositionHisDao {
     /**
      * 根据日期和路线id查询定位
      *
-     * @param routeId     路线id
+     * @param routeId    路线id
      * @param recodeTime 创建日期
      * @return 返回定位信息集合
      */

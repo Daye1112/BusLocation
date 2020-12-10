@@ -4,12 +4,13 @@ import java.sql.Timestamp;
 
 /**
  * 角色权限中间表
+ *
  * @author Daye
  */
 public class SbRoleAuthority extends AbstractEntity {
     /**
-	* 自增id
-	*/
+     * 自增id
+     */
     private Integer id;
     private SysRole sysRole;
     private SysAuthority sysAuthority;

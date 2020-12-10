@@ -16,14 +16,16 @@ public interface SysRoleDao {
 
     /**
      * 查询所有角色的id和name
+     *
      * @return 返回map集合
      */
     List<Map<String, Object>> findIdAndSrName();
 
     /**
      * 根据创建日期查询角色信息
+     *
      * @param startDate 开始时间
-     * @param endDate 结束时间
+     * @param endDate   结束时间
      * @return 返回查询role结果list
      */
     List<Map<String, Object>> findByCreatedDate(@Param("startDate") Date startDate, @Param("endDate") Date endDate);

@@ -1,7 +1,6 @@
 package com.ky.gps.service;
 
 import com.ky.gps.entity.SbBusRoute;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -15,13 +14,13 @@ public interface SbBusRouteService {
      * 更新绑定信息
      *
      * @param sbBusRoute 待更新的对象
-     *
      * @return 返回更新后的绑定信息
      */
     Map<String, Object> update(SbBusRoute sbBusRoute);
 
     /**
      * 插入记录
+     *
      * @param sbBusRoute 待插入的对象
      * @return 返回绑定信息
      */

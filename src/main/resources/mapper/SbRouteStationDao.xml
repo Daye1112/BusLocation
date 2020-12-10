@@ -17,13 +17,17 @@
         <result column="valid" jdbcType="TINYINT" property="valid"/>
     </resultMap>
     <sql id="selectBaseParamsPre">
-        ss.id stationId,
+        ss
+        .
+        id
+        stationId,
         ss.SBS_STATION sbsStation,
         srs.SBS_DEPART_TIME sbsDepartTime,
         ss.SBS_DESC sbsDesc
     </sql>
     <sql id="insertParams">
-            station_id,
+        station_id
+        ,
             route_id,
             sbs_depart_time
     </sql>

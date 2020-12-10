@@ -9,34 +9,54 @@ import java.sql.Timestamp;
  * 包含所有表中共有的属性
  */
 public abstract class AbstractEntity implements Serializable {
-    /** 备注 */
+    /**
+     * 备注
+     */
     private String remark;
-    /** 备注1 */
+    /**
+     * 备注1
+     */
     private String remark1;
-    /** 备注2 */
+    /**
+     * 备注2
+     */
     private String remark2;
-    /** 备注3 */
+    /**
+     * 备注3
+     */
     private String remark3;
-    /** 创建时间 */
+    /**
+     * 创建时间
+     */
     private Timestamp createdDate;
-    /** 创建者 */
+    /**
+     * 创建者
+     */
     private String createdBy;
-    /** 更新时间 */
+    /**
+     * 更新时间
+     */
     private Timestamp updatedDate;
-    /** 更新者 */
+    /**
+     * 更新者
+     */
     private String updatedBy;
-    /** 是否有效 */
+    /**
+     * 是否有效
+     */
     private Boolean valid;
 
-    /** 构造方法 */
+    /**
+     * 构造方法
+     */
     AbstractEntity() {
     }
 
     AbstractEntity(String remark, String remark1,
-                          String remark2, String remark3,
-                          Timestamp createdDate, String createdBy,
-                          Timestamp updatedDate, String updatedBy,
-                          Boolean valid) {
+                   String remark2, String remark3,
+                   Timestamp createdDate, String createdBy,
+                   Timestamp updatedDate, String updatedBy,
+                   Boolean valid) {
         this.remark = remark;
         this.remark1 = remark1;
         this.remark2 = remark2;
@@ -50,6 +70,7 @@ public abstract class AbstractEntity implements Serializable {
 
     /**
      * 重写toString
+     *
      * @return 抽象类属性值
      */
     @Override
@@ -67,7 +88,9 @@ public abstract class AbstractEntity implements Serializable {
                 '}';
     }
 
-    /** getter/setter start*/
+    /**
+     * getter/setter start
+     */
     public String getRemark() {
         return remark;
     }

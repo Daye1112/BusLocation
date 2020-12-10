@@ -4,29 +4,41 @@ import java.sql.Timestamp;
 
 /**
  * @author Daye
- *
+ * <p>
  * 用户和角色多对多关系的中间表实体类
  */
-public class SbUserRole extends AbstractEntity{
-    /** id */
+public class SbUserRole extends AbstractEntity {
+    /**
+     * id
+     */
     private Integer id;
-    /** 角色 */
+    /**
+     * 角色
+     */
     private SysRole sysRole;
-    /** 用户 */
+    /**
+     * 用户
+     */
     private SysUser sysUser;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SbUserRole() {
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SbUserRole(Integer id, SysRole sysRole, SysUser sysUser) {
         this.id = id;
         this.sysRole = sysRole;
         this.sysUser = sysUser;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SbUserRole(String remark, String remark1,
                       String remark2, String remark3,
                       Timestamp createdDate, String createdBy,
@@ -51,9 +63,15 @@ public class SbUserRole extends AbstractEntity{
                 '}';
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public SysRole getSysRole() {
         return sysRole;
+    }
+
+    public void setSysRole(SysRole sysRole) {
+        this.sysRole = sysRole;
     }
 
     public Integer getId() {
@@ -62,10 +80,6 @@ public class SbUserRole extends AbstractEntity{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public void setSysRole(SysRole sysRole) {
-        this.sysRole = sysRole;
     }
 
     public SysUser getSysUser() {

@@ -1,10 +1,8 @@
 package com.ky.gps.controller.manage;
 
 import com.ky.gps.annotation.PermissionName;
-import com.ky.gps.entity.ErrorCode;
 import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.service.DepartmentService;
-import com.ky.gps.util.ResultWrapperUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +30,7 @@ public class DepartmentManageHandler {
 
     /**
      * 部门id,name查询
+     *
      * @return 返回json格式数据
      */
     @RequiresPermissions("dept:query")

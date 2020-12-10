@@ -24,13 +24,13 @@ public class SysLogServiceImpl implements SysLogService {
     @Transactional(rollbackFor = Exception.class, readOnly = true)
     @Override
     public List<Map<String, Object>> findByUserAndNameAndOperatorAndCreatedDate(String userNumber, String name, String operator, String createdDate) {
-        return sysLogDao.findByUserAndNameAndOperatorAndCreatedDate(userNumber,name, operator,createdDate);
+        return sysLogDao.findByUserAndNameAndOperatorAndCreatedDate(userNumber, name, operator, createdDate);
     }
 
     @Async
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void saveSysLog(SysLog sysLog){
+    public void saveSysLog(SysLog sysLog) {
         sysLogDao.saveSysLog(sysLog);
     }
 }

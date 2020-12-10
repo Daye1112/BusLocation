@@ -5,22 +5,19 @@ import com.ky.gps.dao.SbUserRoleDao;
 import com.ky.gps.dao.SysRoleDao;
 import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.entity.SysRole;
-import com.ky.gps.service.SbRoleAuthorityService;
-import com.ky.gps.service.SbUserRoleService;
 import com.ky.gps.service.SysRoleService;
 import com.ky.gps.util.ResultWrapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author Daye
- *
+ * <p>
  * 角色表Service层接口的实现类
  */
 @Service

@@ -38,13 +38,14 @@ public class SysAuthorityManageHandler {
 
     /**
      * 查询所有权限
+     *
      * @return 返回json格式数据
      */
     @PermissionName(displayName = "权限查询", group = "权限管理")
     @RequiresPermissions("authority:query")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public ResultWrapper findAll(){
+    public ResultWrapper findAll() {
         return sysAuthorityService.findAll();
     }
 

@@ -1,11 +1,5 @@
 package com.ky.gps.server;
 
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -17,26 +11,27 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.codec.LineBasedFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.ResourceLeakDetector;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 
  * @author Rocky
- * 
+ * <p>
  * 2019年5月11日-下午7:08:44
  */
 public class EchoServer {
 
+    private final static Logger LOGGER = LoggerFactory.getLogger(StartThread.class);
     private EventLoopGroup group;
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
     private ServerBootstrap bootstrap;
     private int PORT;
-    private final static Logger LOGGER = LoggerFactory.getLogger(StartThread.class);
 
     public int getPort() {
         return PORT;
@@ -69,9 +64,9 @@ public class EchoServer {
                     protected void initChannel(SocketChannel ch) throws Exception {
                         //使用了netty自带的编码器和解码器
                         //心跳检测，读超时，写超时，读写超时
-                    	ByteBuf buf = Unpooled.copiedBuffer("#".getBytes());
+                        ByteBuf buf = Unpooled.copiedBuffer("#".getBytes());
 //                    	ch.pipeline().addLast(new MyDecoder(1024,buf));
-                    	ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024,buf));
+                        ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, buf));
                         ch.pipeline().addLast(new IdleStateHandler(60, 4, 0, TimeUnit.SECONDS));
                         ch.pipeline().addLast(new ServerHandler());
                     }

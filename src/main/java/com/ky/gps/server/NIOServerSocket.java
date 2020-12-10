@@ -1,8 +1,10 @@
 package com.ky.gps.server;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
-//import java.net.ServerSocket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -11,9 +13,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * NIO框架
  *
@@ -21,6 +20,7 @@ import org.slf4j.LoggerFactory;
  */
 
 public class NIOServerSocket {
+    private final static Logger LOGGER = LoggerFactory.getLogger(NIOServerSocket.class);
     /**
      * 选择器
      */
@@ -31,7 +31,6 @@ public class NIOServerSocket {
     private ServerSocketChannel socketChannel;
     //	private static ServerSocket serverSocket;	// 通信服务
     private int port;
-    private final static Logger LOGGER = LoggerFactory.getLogger(NIOServerSocket.class);
 
 
     public NIOServerSocket(int port) {
@@ -56,7 +55,7 @@ public class NIOServerSocket {
      * 监听服务开启
      */
     public void start() {
-    	ParseGPS parseGPS = new ParseGPS();
+        ParseGPS parseGPS = new ParseGPS();
         try {
             init();
         } catch (IOException e) {

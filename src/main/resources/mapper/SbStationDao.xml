@@ -19,7 +19,8 @@
         <result column="valid" jdbcType="TINYINT" property="valid"/>
     </resultMap>
     <sql id="baseInfo">
-            ID            id,
+        ID
+        id,
             SBS_STATION   sbsStation,
             SBS_LONGITUDE sbsLongitude,
             SBS_LATITUDE  sbsLatitude,

@@ -281,9 +281,9 @@ public class SysUserManageHandler {
                 sysUser.setUpdatedBy(((SysLog) request.getSession().getAttribute(SysLogUtil.SESSION_SYSLOG)).getWorkId());
                 //更新对象
                 Map<String, Object> res = sysUserService.updateUserBaseInfo(sysUser);
-                if(res != null) {
+                if (res != null) {
                     resultWrapper = ResultWrapperUtil.setSuccessOf(res);
-                } else{
+                } else {
                     resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.UPDATE_ERROR, "邮箱已存在", response);
                 }
                 //日志记录
@@ -363,7 +363,7 @@ public class SysUserManageHandler {
             } else {
                 //添加用户信息，并将返回的json对象赋值给resultWrapper
                 resultWrapper = sysUserService.saveUserBaseInfo(sysUser);
-                if(resultWrapper == null){
+                if (resultWrapper == null) {
                     resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.SAVE_ERROR, "邮箱已存在", response);
                 }
                 //记录到用户操作记录

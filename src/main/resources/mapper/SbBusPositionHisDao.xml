@@ -48,8 +48,8 @@
         select sbp_longitude, sbp_latitude
         from sb_busposition_his
         where Valid = 1
-        and ROUTE_ID = #{routeId}
-        and DATE_FORMAT(SBP_RECODE_TIME, '%Y-%m-%d') = DATE_FORMAT(#{recodeTime}  ,'%Y-%m-%d')
+          and ROUTE_ID = #{routeId}
+          and DATE_FORMAT(SBP_RECODE_TIME, '%Y-%m-%d') = DATE_FORMAT(#{recodeTime}, '%Y-%m-%d')
         order by SBP_RECODE_TIME
     </select>
 </mapper>

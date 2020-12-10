@@ -23,6 +23,7 @@ public class JwtUtil {
 
     /**
      * 生成签名，15分钟过期
+     *
      * @param **username**
      * @param **password**
      * @return
@@ -51,17 +52,18 @@ public class JwtUtil {
 
     /**
      * 检验token是否正确
+     *
      * @param **token**
      * @return
      */
-    public static String verify(String token){
+    public static String verify(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             JWTVerifier verifier = JWT.require(algorithm).build();
             DecodedJWT jwt = verifier.verify(token);
             String userJson = jwt.getClaim("data").asString();
             return userJson;
-        } catch (Exception e){
+        } catch (Exception e) {
             return "";
         }
     }

@@ -29,8 +29,7 @@
     <select id="findStartAndEndTimeByRouteId" parameterType="integer" resultType="map">
         SELECT SBBR_START_TIME startTime, SBBR_END_TIME endTime
         FROM sb_bus_route
-        WHERE ROUTE_ID = #{routeId}
-        LIMIT 1
+        WHERE ROUTE_ID = #{routeId} LIMIT 1
     </select>
     <!--根据路线id查询路线的校车绑定信息-->
     <select id="findByRouteId" resultType="map">

@@ -13,8 +13,9 @@ public interface SysRoleService {
 
     /**
      * 根据创建日期查询角色信息
+     *
      * @param startDate 开始时间
-     * @param endDate 结束时间
+     * @param endDate   结束时间
      * @return 返回json对象
      */
     ResultWrapper findByCreatedDate(Date startDate, Date endDate);
@@ -29,6 +30,7 @@ public interface SysRoleService {
 
     /**
      * 根据id查询角色信息
+     *
      * @param id 待查询的id
      * @return 返回json对象
      */
@@ -44,6 +46,7 @@ public interface SysRoleService {
 
     /**
      * 根据角色id回复角色及用户角色中间表和角色权限中间表的记录
+     *
      * @param id 角色id
      * @return json对象
      */
@@ -59,6 +62,7 @@ public interface SysRoleService {
 
     /**
      * 查询所有角色信息
+     *
      * @return 返回json格式数据
      */
     ResultWrapper findAllRole();

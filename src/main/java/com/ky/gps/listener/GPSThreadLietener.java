@@ -1,12 +1,12 @@
 package com.ky.gps.listener;
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpServlet;
-
 import com.ky.gps.server.StartThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpServlet;
 
 
 /**
@@ -23,11 +23,12 @@ public class GPSThreadLietener extends HttpServlet implements ServletContextList
     public GPSThreadLietener() {
 
     }
+
     @Override
     public void contextDestroyed(ServletContextEvent arg0) {
-        try{
+        try {
             startThread.stop();
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
         LOGGER.info("----------- GPS解析系统停止 -----------");

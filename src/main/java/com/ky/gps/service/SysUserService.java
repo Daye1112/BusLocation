@@ -3,7 +3,6 @@ package com.ky.gps.service;
 import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.entity.SysUser;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,10 +13,11 @@ public interface SysUserService {
 
     /**
      * 根据真实姓名，工号和部门id模糊查询
+     *
      * @param params 存放参数的map
-     *          realName        真实姓名
-     *          workId          工号
-     *          departmentId    部门id
+     *               realName        真实姓名
+     *               workId          工号
+     *               departmentId    部门id
      * @return 返回key={id,departmentName,workId,realName,idCard,phone,email}
      */
     ResultWrapper findBaseInfoLikeRealNameAndWorkIdAndDepartment(Map<String, Object> params);
@@ -40,6 +40,7 @@ public interface SysUserService {
 
     /**
      * 根据用户id查询用户基本信息
+     *
      * @param userId 用户id
      * @return 返回json格式
      */
@@ -56,7 +57,7 @@ public interface SysUserService {
     /**
      * 根据depId进行查询，获取总记录数
      *
-     * @param depId 部门id
+     * @param depId    部门id
      * @param pageSize 页大小
      * @return Json对象
      */
@@ -75,6 +76,7 @@ public interface SysUserService {
 
     /**
      * 根据realName进行模糊查询，返回记录总页数和总记录数
+     *
      * @param realName 真实姓名
      * @param pageSize 页大小
      * @return Json对象
@@ -94,7 +96,7 @@ public interface SysUserService {
     /**
      * 根据workId进行模糊查询，获取总记录数
      *
-     * @param wordId 工号
+     * @param wordId   工号
      * @param pageSize 页大小
      * @return Json对象
      */

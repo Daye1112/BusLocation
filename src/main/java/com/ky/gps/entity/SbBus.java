@@ -8,29 +8,47 @@ import java.sql.Timestamp;
  */
 public class SbBus extends AbstractEntity {
 
-    /** 位置id */
+    /**
+     * 位置id
+     */
     private Integer id;
-    /** 座位数 */
+    /**
+     * 座位数
+     */
     private Integer sbbSeatNum;
-    /** 车辆类型 */
+    /**
+     * 车辆类型
+     */
     private String sbbBusType;
-    /** 车牌号 */
+    /**
+     * 车牌号
+     */
     private String sbbPlateNumber;
-    /** 驾驶员 */
+    /**
+     * 驾驶员
+     */
     private String sbbDriverName;
-    /** 联系电话 */
+    /**
+     * 联系电话
+     */
     private String sbbDriverTel;
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SbBus() {
     }
 
-    /** 有参构造方法-id */
+    /**
+     * 有参构造方法-id
+     */
     public SbBus(Integer id) {
         this.id = id;
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SbBus(Integer id, Integer sbbSeatNum,
                  String sbbBusType, String sbbPlateNumber,
                  String sbbDriverName, String sbbDriverTel) {
@@ -42,7 +60,9 @@ public class SbBus extends AbstractEntity {
         this.sbbDriverTel = sbbDriverTel;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SbBus(String remark, String remark1,
                  String remark2, String remark3,
                  Timestamp createdDate, String createdBy,
@@ -61,6 +81,7 @@ public class SbBus extends AbstractEntity {
 
     /**
      * 重写toString
+     *
      * @return 属性名+属性值
      */
     @Override
@@ -75,7 +96,9 @@ public class SbBus extends AbstractEntity {
                 "} " + super.toString();
     }
 
-    /** getter/setter */
+    /**
+     * getter/setter
+     */
     public Integer getId() {
         return id;
     }

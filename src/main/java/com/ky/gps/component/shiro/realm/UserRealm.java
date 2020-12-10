@@ -17,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -29,14 +28,13 @@ import java.util.Map;
 public class UserRealm extends AuthorizingRealm {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserRealm.class);
-    private SysUserService sysUserService;
-    private SbUserRoleService sbUserRoleService;
-    private SbRoleAuthorityService sbRoleAuthorityService;
-
     /**
      * 用户身份数组
      */
     private final static String[] LOGIN_TYPE = {"manager", "simple"};
+    private SysUserService sysUserService;
+    private SbUserRoleService sbUserRoleService;
+    private SbRoleAuthorityService sbRoleAuthorityService;
 
     @Override
     public String getName() {
@@ -46,7 +44,7 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         @SuppressWarnings("unchecked")
-        Map<String, Object> user = (Map<String, Object>)principals.getPrimaryPrincipal();
+        Map<String, Object> user = (Map<String, Object>) principals.getPrimaryPrincipal();
         //查询用户的角色
         List<String> roles = sbUserRoleService.findSysRoleSrSourceBySysUserId((Integer) user.get("id"));
         //查询角色对应的权限

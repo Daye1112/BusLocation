@@ -53,10 +53,10 @@ public class SbRouteManageHandler {
         String endTime = "";
         //空值校验
         if (params != null) {
-            if(params.get("sbrRouteName") != null) {
+            if (params.get("sbrRouteName") != null) {
                 sbrRouteName = params.get("sbrRouteName").toString();
             }
-            if(params.get("startTime") != null
+            if (params.get("startTime") != null
                     && params.get("endTime") != null) {
                 startTime = params.get("startTime").toString();
                 endTime = params.get("endTime").toString();
@@ -66,7 +66,7 @@ public class SbRouteManageHandler {
                 resultWrapper = ResultWrapperUtil.setErrorAndStatusOf(ErrorCode.PARAMETER_NOT_VALID, "时间区间错误", response);
             }
         }
-        if(resultWrapper == null) {
+        if (resultWrapper == null) {
             resultWrapper = ResultWrapperUtil.setSuccessOf(sbRouteService.findByNameAndTimeFuzzy(sbrRouteName, startTime, endTime));
         }
         return resultWrapper;

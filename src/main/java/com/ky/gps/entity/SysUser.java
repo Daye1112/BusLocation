@@ -9,35 +9,61 @@ import java.util.Date;
  */
 public class SysUser extends AbstractEntity {
 
-    /** ID */
+    /**
+     * ID
+     */
     private Integer id;
-    /** 部门对象 */
+    /**
+     * 部门对象
+     */
     private Department department;
-    /** 职工编号 */
+    /**
+     * 职工编号
+     */
     private String workId;
-    /** 姓名 */
+    /**
+     * 姓名
+     */
     private String realName;
-    /** 密码 */
+    /**
+     * 密码
+     */
     private String password;
-    /** 加密密码 */
+    /**
+     * 加密密码
+     */
     private String salt;
-    /** 身份证号码 */
+    /**
+     * 身份证号码
+     */
     private String idCard;
-    /** 联系电话 */
+    /**
+     * 联系电话
+     */
     private String phone;
-    /** 电子邮件 */
+    /**
+     * 电子邮件
+     */
     private String email;
-    /** 账户创建日期 */
+    /**
+     * 账户创建日期
+     */
     private Date accountDate;
-    /** 上一次密码修改日期 */
+    /**
+     * 上一次密码修改日期
+     */
     private Date lastPsdDate;
 
 
-    /** 无参构造方法 */
+    /**
+     * 无参构造方法
+     */
     public SysUser() {
     }
 
-    /** 有参构造方法-自身属性 */
+    /**
+     * 有参构造方法-自身属性
+     */
     public SysUser(Integer id, Department department,
                    String workId, String realName,
                    String password, String salt,
@@ -57,7 +83,9 @@ public class SysUser extends AbstractEntity {
         this.lastPsdDate = lastPsdDate;
     }
 
-    /** 有参构造方法-所有属性 */
+    /**
+     * 有参构造方法-所有属性
+     */
     public SysUser(String remark, String remark1,
                    String remark2, String remark3,
                    Timestamp createdDate, String createdBy,
@@ -88,6 +116,7 @@ public class SysUser extends AbstractEntity {
 
     /**
      * 重写toString
+     *
      * @return 返回实体属性
      */
     @Override
@@ -108,7 +137,9 @@ public class SysUser extends AbstractEntity {
                 super.toString();
     }
 
-    /** getter/setter start */
+    /**
+     * getter/setter start
+     */
     public Integer getId() {
         return id;
     }

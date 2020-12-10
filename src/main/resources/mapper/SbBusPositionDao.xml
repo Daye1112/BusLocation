@@ -95,7 +95,7 @@
           AND route_gps.`week` = #{week}
           AND sb_busposition.Valid = 1
         ORDER BY sb_busposition.SBP_RECODE_TIME
-        LIMIT #{startIndex}, #{count}
+            LIMIT #{startIndex}, #{count}
     </select>
     <select id="findCountByRouteId" resultType="java.lang.Integer">
         SELECT COUNT(ss.ID)
@@ -137,8 +137,7 @@
              ) route_gps
         WHERE route_gps.gpsId = sb_busposition.GPS_ID
           AND sb_busposition.Valid = 1
-        ORDER BY sb_busposition.SBP_RECODE_TIME DESC
-        LIMIT 1
+        ORDER BY sb_busposition.SBP_RECODE_TIME DESC LIMIT 1
     </select>
     <!--根据路线id查询路线最新定位-->
     <select id="findByRouteId" resultType="map">
@@ -149,9 +148,8 @@
                SBP_DIRECTION   sbpDirection
         from sb_busposition
         where Valid = 1
-        and ROUTE_ID = #{routeId}
-        order by SBP_RECODE_TIME desc
-        limit 1
+          and ROUTE_ID = #{routeId}
+        order by SBP_RECODE_TIME desc limit 1
     </select>
 
 </mapper>

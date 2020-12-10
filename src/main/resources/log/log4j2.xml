@@ -88,7 +88,7 @@
         <logger name="io.netty" level="info"/>
         <logger name="org.apache.shiro" level="info"/>
         <logger name=" net.sf.ehcache" level="info"/>
-        <logger name="com.ky.gps" level="debug" />
+        <logger name="com.ky.gps" level="debug"/>
         <root level="all">
             <!--<appender-ref ref="Console"/>-->
             <appender-ref ref="ProDebugLog"/>

@@ -8,20 +8,32 @@ import java.sql.Timestamp;
  */
 public class SbRouteStation extends AbstractEntity {
 
-    /** id */
+    /**
+     * id
+     */
     private Integer id;
-    /** 路线id所对应的实体类 */
+    /**
+     * 路线id所对应的实体类
+     */
     private SbRoute sbRoute;
-    /** 站点id所对应的实体类 */
+    /**
+     * 站点id所对应的实体类
+     */
     private SbStation sbStation;
-    /** 发车时间 */
+    /**
+     * 发车时间
+     */
     private String sbsDepartTime;
 
-    /** 无参方法 */
+    /**
+     * 无参方法
+     */
     public SbRouteStation() {
     }
 
-    /** 有参方法-自身属性 */
+    /**
+     * 有参方法-自身属性
+     */
     public SbRouteStation(Integer id, SbRoute sbRoute, SbStation sbStation, String sbsDepartTime) {
         this.id = id;
         this.sbRoute = sbRoute;
@@ -29,7 +41,9 @@ public class SbRouteStation extends AbstractEntity {
         this.sbsDepartTime = sbsDepartTime;
     }
 
-    /** 有参方法-所有属性 */
+    /**
+     * 有参方法-所有属性
+     */
     public SbRouteStation(String remark, String remark1,
                           String remark2, String remark3,
                           Timestamp createdDate, String createdBy,
@@ -52,7 +66,9 @@ public class SbRouteStation extends AbstractEntity {
         this.id = id;
     }
 
-    /** getter/stter */
+    /**
+     * getter/stter
+     */
 
     public SbRoute getSbRoute() {
         return sbRoute;

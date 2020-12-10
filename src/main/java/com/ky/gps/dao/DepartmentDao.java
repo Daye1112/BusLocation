@@ -13,12 +13,14 @@ public interface DepartmentDao {
 
     /**
      * 查询所有部门的id和部门名
+     *
      * @return 返回list， map的key为{}
      */
     List<Map<String, Object>> findAllNameAndId();
 
     /**
      * 根据id查询部门name
+     *
      * @param id 部门id
      * @return name值
      */

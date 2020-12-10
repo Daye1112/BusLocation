@@ -21,7 +21,8 @@
         <result column="Valid" jdbcType="BOOLEAN" property="valid"/>
     </resultMap>
     <sql id="Base_Column_List">
-            ID,
+        ID
+        ,
             SA_GROUP,
             SA_NAME,
             SA_DISPLAY_NAME,

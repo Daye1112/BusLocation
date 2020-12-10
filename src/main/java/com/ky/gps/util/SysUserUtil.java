@@ -5,6 +5,7 @@ import com.ky.gps.service.DepartmentService;
 
 /**
  * 用户相关工具类
+ *
  * @author Daye
  */
 public class SysUserUtil {

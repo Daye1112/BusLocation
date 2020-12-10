@@ -1,6 +1,5 @@
 package com.ky.gps.dao;
 
-import com.ky.gps.entity.ResultWrapper;
 import com.ky.gps.entity.SbUserRole;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,21 +26,24 @@ public interface SbUserRoleDao {
 
     /**
      * 批量更新指定用户的角色的标志位
-     * @param userId 用户id
+     *
+     * @param userId     用户id
      * @param roleIdList 待更新的角色记录集合
-     * @param value 更新的值
+     * @param value      更新的值
      */
     void batchUpdateValidByUserId(@Param("userId") Integer userId, @Param("roleIdList") List<Integer> roleIdList, @Param("value") Integer value);
 
     /**
      * 批量添加指定用户的角色信息
-     * @param userId 用户id
+     *
+     * @param userId     用户id
      * @param roleIdList 角色idList
      */
     void batchSaveByUserId(@Param("userId") Integer userId, @Param("roleIdList") List<Integer> roleIdList);
 
     /**
      * 根据用户id查询其拥有的所有角色id
+     *
      * @param userId 用户id
      * @return 角色id集合
      */
@@ -49,19 +51,22 @@ public interface SbUserRoleDao {
 
     /**
      * 查询所有用户和其角色信息
+     *
      * @return 返回map集合
      */
     List<Map<String, Object>> findAllUserAndRole();
 
     /**
      * 根据角色id将记录置为无效
+     *
      * @param roleId 角色id
-     * @param value 更新的值
+     * @param value  更新的值
      */
-    void updateValidByRoleId(@Param("roleId") Integer roleId, @Param("value")Integer value);
+    void updateValidByRoleId(@Param("roleId") Integer roleId, @Param("value") Integer value);
 
     /**
      * 根据用户id查询该用户的所有角色
+     *
      * @param id 用户id
      * @return 返回角色名list
      */

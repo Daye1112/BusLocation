@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author Daye
  * 对resultWrapper进行封装并返回封装好后的对象
  */
-public class ResultWrapperUtil{
+public class ResultWrapperUtil {
 
     /**
      * 操作成功，将object存入待返回的对象中
+     *
      * @param object 需要返回前端的data
      * @return 返回封装信息类
      */
@@ -28,6 +29,7 @@ public class ResultWrapperUtil{
 
     /**
      * 操作失败，将错误提示存入json对象中
+     *
      * @param errorCode 错误信息
      * @return 返回封装信息类
      */
@@ -43,7 +45,8 @@ public class ResultWrapperUtil{
 
     /**
      * 操作失败，并失败提示加入错误信息中
-     * @param errorCode 错误信息
+     *
+     * @param errorCode    错误信息
      * @param errorMessage 额外的错误提示
      * @return 返回封装信息类
      */
@@ -59,6 +62,7 @@ public class ResultWrapperUtil{
 
     /**
      * 操作失败，将错误提示存入json对象中
+     *
      * @param errorCode 错误信息
      * @return 返回封装信息类
      */
@@ -76,7 +80,8 @@ public class ResultWrapperUtil{
 
     /**
      * 操作失败，并失败提示加入错误信息中
-     * @param errorCode 错误信息
+     *
+     * @param errorCode    错误信息
      * @param errorMessage 额外的错误提示
      * @return 返回封装信息类
      */

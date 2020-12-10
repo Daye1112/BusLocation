@@ -42,8 +42,8 @@ public class SelfInfoManagerHandler {
     /**
      * 修改用户自身密码
      *
-     * @param models 用于存放oldPassword、newPassword的键值对
-     * @param request     request域
+     * @param models  用于存放oldPassword、newPassword的键值对
+     * @param request request域
      * @return json格式数据，data为null
      */
     @RequestMapping(value = "/modify/pwd", method = RequestMethod.POST)

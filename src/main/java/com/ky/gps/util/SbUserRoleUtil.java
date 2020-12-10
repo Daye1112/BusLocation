@@ -26,7 +26,7 @@ public class SbUserRoleUtil {
         //遍历roles
         for (Integer roleId : roles) {
             //判断id是否在已有id集合中
-            if(!roleIdList.contains(roleId)){
+            if (!roleIdList.contains(roleId)) {
                 needAddIdList.add(roleId);
             }
         }
@@ -47,7 +47,7 @@ public class SbUserRoleUtil {
         List<Integer> needDeleteIdList = new ArrayList<>();
         //遍历roles
         for (Integer roleId : roleIdList) {
-            if(!roles.contains(roleId)){
+            if (!roles.contains(roleId)) {
                 needDeleteIdList.add(roleId);
             }
         }

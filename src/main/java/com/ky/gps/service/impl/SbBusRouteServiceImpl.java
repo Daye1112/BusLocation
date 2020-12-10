@@ -46,7 +46,7 @@ public class SbBusRouteServiceImpl implements SbBusRouteService {
     @Override
     public List<Map<String, Object>> findByRouteId(Integer routeId, String week, String startTime, String endTime) {
         List<Map<String, Object>> busRouteList = sbBusRouteDao.findByRouteId(routeId, week);
-        if(StringUtil.isNotEmpty(startTime) && StringUtil.isNotEmpty(endTime)) {
+        if (StringUtil.isNotEmpty(startTime) && StringUtil.isNotEmpty(endTime)) {
             //遍历筛选校车路线信息
             for (int i = 0; i < busRouteList.size(); i++) {
                 String sbbrStartTime = busRouteList.get(i).get("sbbrStartTime").toString();
