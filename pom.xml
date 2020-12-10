@@ -442,5 +442,14 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webappDirectory>${basedir}/src/main/WebRoot</webappDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
