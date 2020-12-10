@@ -10,7 +10,6 @@ import com.ky.gps.service.SysRoleService;
 import com.ky.gps.util.IntegerUtil;
 import com.ky.gps.util.ResultWrapperUtil;
 import com.ky.gps.util.SbRoleAuthorityUtil;
-import javafx.beans.binding.ObjectBinding;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

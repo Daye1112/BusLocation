@@ -1,7 +1,5 @@
 package com.ky.gps.util;
 
-import org.omg.CORBA.UNKNOWN;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
