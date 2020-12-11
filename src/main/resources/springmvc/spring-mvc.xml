@@ -41,12 +41,9 @@
     <!-- 加入两个常规配置，引入.js和.css文件 -->
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
-    <mvc:resources location="/bcs/js/" mapping="/bcs/js/**"/>
-    <mvc:resources location="/bcs/css/" mapping="/bcs/css/**"/>
-    <mvc:resources location="/bcs/images/" mapping="/bcs/images/**"/>
-    <mvc:resources location="/bms/js/" mapping="/bms/js/**"/>
-    <mvc:resources location="/bms/css/" mapping="/bms/css/**"/>
-    <mvc:resources location="/bms/images/" mapping="/bms/images/**"/>
-    
+
+    <mvc:resources mapping="/bcs/**" location="/bcs/"/>
+    <mvc:resources mapping="/bms/**" location="/bms/"/>
+
     <import resource="applicationContext-mvc-shiro.xml"/>
 </beans>
