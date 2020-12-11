@@ -27,7 +27,8 @@ public class GPSThreadLietener extends HttpServlet implements ServletContextList
     @Override
     public void contextDestroyed(ServletContextEvent arg0) {
         try {
-            startThread.stop();
+            /* startThread.stop(); */
+            if (startThread != null && startThread.isAlive()) startThread.interrupt();
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
