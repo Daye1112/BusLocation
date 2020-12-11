@@ -28,3 +28,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Exclude WebRoot Classes and Libs
+src/main/WebRoot/WEB-INF/classes
+src/main/WebRoot/WEB-INF/lib
