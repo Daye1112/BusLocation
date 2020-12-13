@@ -4944,6 +4944,7 @@ INSERT INTO `sb_role_authority` VALUES ('189', '1', '41', null, null, null, null
 INSERT INTO `sb_role_authority` VALUES ('190', '1', '42', null, null, null, null, '2019-10-08 11:12:53', null, '2019-10-08 11:12:53', null, '1');
 INSERT INTO `sb_role_authority` VALUES ('191', '1', '43', null, null, null, null, '2019-10-08 11:12:53', null, '2019-10-08 11:12:53', null, '1');
 INSERT INTO `sb_role_authority` VALUES ('192', '1', '44', null, null, null, null, '2019-10-08 17:53:28', null, '2019-10-08 17:53:28', null, '1');
+INSERT INTO `sb_role_authority` VALUES ('193', '1', '45', null, null, null, null, '2019-10-08 17:53:28', null, '2019-10-08 17:53:28', null, '1');
 
 -- ----------------------------
 -- Table structure for sb_route
@@ -6048,6 +6049,7 @@ INSERT INTO `sys_authority` VALUES ('41', '校车路线绑定', 'busRoute:delete
 INSERT INTO `sys_authority` VALUES ('42', '校车路线绑定', 'busRoute:save', '校车路线添加', null, null, null, null, '2019-10-08 11:10:35', null, '2019-10-08 11:10:35', null, '1');
 INSERT INTO `sys_authority` VALUES ('43', '校车路线绑定', 'busRoute:query', '校车路线查询', null, null, null, null, '2019-10-08 11:10:36', null, '2019-10-08 11:10:36', null, '1');
 INSERT INTO `sys_authority` VALUES ('44', '日志管理', 'log:fQuery', '日志筛选', null, null, null, null, '2019-10-08 17:51:50', null, '2019-10-08 17:51:50', null, '1');
+INSERT INTO `sys_authority` VALUES ('45', '路线站点管理', 'positionHis:fQuery', '校车路线查询', null, null, null, null, '2019-10-08 17:51:50', null, '2019-10-08 17:51:50', null, '1');
 
 -- ----------------------------
 -- Table structure for sys_log
